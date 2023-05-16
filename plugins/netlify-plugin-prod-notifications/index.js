@@ -1,7 +1,6 @@
-// module.exports = {
-    // async onSuccess() {
-      export const onSuccess = function({netlifyConfig}){
-      netlifyConfig.build.environment.WHICH_DEPLOY = getDeployStage();
-      console.log("onSuccess: I run on build success " + getDeployStage + " 🎉.");
-    // }
+module.exports = {
+    async onSuccess() {
+    console.log("onSuccess: I run on build success " + process.env.WHICH_DEPLOY + " 🎉.");
+  
   }
+  };
