@@ -2,7 +2,7 @@ module.exports = {
     async onSuccess() {
       netlifyConfig.build.environment.WHICH_DEPLOY = getDeployStage();
       console.log("onSuccess: I run on build success " + getDeployStage + " 🎉.");
-if (getDeployStage() === "production") {
+  if (getDeployStage() === "production") {
       const sgMail = require("@sendgrid/mail");
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
